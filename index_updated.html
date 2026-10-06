@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Sanhya ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background music: put your music file beside index.html and name it music.mp3 -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="stars"></div>
+
+  <main>
+    <section class="gate" id="gate">
+      <div class="card">
+        <div class="sparkle">✦</div>
+        <p class="tiny">A little something made specially for</p>
+        <h1>Sanhya</h1>
+        <p class="hint">There is a tiny secret hidden here.</p>
+        <div class="code-row">
+          <input id="code" maxlength="13" placeholder="ENTER CODE" autocomplete="off">
+          <button onclick="unlock()">OPEN</button>
+        </div>
+        <p class="error" id="error"></p>
+        <p class="code-tip">Hint: where we first met before IELTS class 👀</p>
+      </div>
+    </section>
+
+    <section class="surprise hidden" id="surprise">
+      <div class="hero">
+        <p class="eyebrow">TODAY IS YOUR DAY</p>
+        <h2>Happy Birthday,<br><span>Sanhya</span> 🎂</h2>
+        <p class="subtitle">Not a copied message. I coded this one.</p>
+        <button class="scroll-btn" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">
+          Open your surprise ↓
+        </button>
+      </div>
+
+      <section class="memory" id="letter">
+        <div class="photo-wrap">
+          <img src="images/sanhya-cake.png" alt="Sanhya with her birthday cake">
+        </div>
+        <div class="letter">
+          <p class="label">A SMALL NOTE</p>
+          <h3>One more year,<br>one more memory.</h3>
+          <p>
+            Happy Birthday, Sanhya! 🥳
+          </p>
+          <p>
+            I hope this year brings you a lot of reasons to smile,
+            good people around you, and moments you'll actually want
+            to remember.
+          </p>
+          <p>
+            And yes... instead of writing a normal birthday paragraph,
+            I decided to turn a few lines of code into a birthday wish.
+          </p>
+          <p class="signature">— Aashish ✨</p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <p class="label">A LITTLE MEMORY</p>
+        <h3>Some moments deserve a place on the page.</h3>
+        <div class="photo-grid">
+          <figure>
+            <img src="images/sanhya-memory.png" alt="Birthday memory">
+            <figcaption>One of those moments worth keeping.</figcaption>
+          </figure>
+          <figure class="quote-card">
+            <div>“Good memories become better stories.”</div>
+            <small>— birthday rule #01</small>
+          </figure>
+        </div>
+      </section>
+
+      <section class="secret">
+        <button onclick="revealSecret()" id="secretBtn">🔐 One last secret</button>
+        <div id="secretMessage" class="secret-message">
+          <span>✨</span>
+          <p>Whatever happens this year, don't forget to enjoy the little things.</p>
+          <strong>Keep smiling, Sanhya.</strong>
+        </div>
+      </section>
+
+      <footer>
+        <p>Made with HTML, CSS, JavaScript & a little too much effort 😄</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Start music after OPEN is clicked so browser autoplay restrictions are avoided.
+    const openButton = document.querySelector('.code-row button');
+    const bgMusic = document.getElementById('bgMusic');
+
+    if (openButton && bgMusic) {
+      openButton.addEventListener('click', () => {
+        bgMusic.volume = 0.35;
+        bgMusic.play().catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
